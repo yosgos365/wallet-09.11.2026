@@ -1,0 +1,130 @@
+{
+  "entities": {
+    "Transaction": {
+      "title": "Transaction",
+      "description": "A single financial transaction (income or expense)",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner of the transaction"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Amount of the transaction"
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO date string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["expense", "income"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "pocketId": {
+          "type": "string"
+        },
+        "incomeType": {
+          "type": "string",
+          "enum": ["ONETIME", "SALARY"]
+        },
+        "incomeSourceId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "number",
+          "description": "Server timestamp"
+        },
+        "updatedAt": {
+          "type": "number",
+          "description": "Server timestamp"
+        }
+      },
+      "required": ["userId", "amount", "date", "type", "description", "pocketId", "createdAt", "updatedAt"]
+    },
+    "Pocket": {
+      "title": "Pocket",
+      "description": "A payment source or money pocket",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "number"
+        }
+      },
+      "required": ["userId", "name", "createdAt", "updatedAt"]
+    },
+    "IncomeSource": {
+      "title": "IncomeSource",
+      "description": "A source of income",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "number"
+        }
+      },
+      "required": ["userId", "name", "createdAt", "updatedAt"]
+    },
+    "FixedExpense": {
+      "title": "FixedExpense",
+      "description": "A defined fixed expense to be selected easily",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "number"
+        }
+      },
+      "required": ["userId", "name", "amount", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "fin_users/{userId}/fin_transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "Transactions belonging to the user"
+    },
+    "fin_users/{userId}/fin_pockets/{pocketId}": {
+      "schema": "Pocket",
+      "description": "Pockets belonging to the user"
+    },
+    "fin_users/{userId}/fin_income_sources/{sourceId}": {
+      "schema": "IncomeSource",
+      "description": "Income sources belonging to the user"
+    },
+    "fin_users/{userId}/fin_fixed_expenses/{expenseId}": {
+      "schema": "FixedExpense",
+      "description": "Fixed expenses to pick from"
+    }
+  }
+}

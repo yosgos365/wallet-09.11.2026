@@ -1,0 +1,11 @@
+{
+  "projectId": "wallet-4de4e",
+  "appId": "1:968995451266:web:260585c495f4462f275f9b",
+  "apiKey": "AIzaSyDYudDYKPO0qBPDnWIXc4uK8Jgh7acGM4Y",
+  "authDomain": "wallet-4de4e.firebaseapp.com",
+  "databaseURL": "https://wallet-4de4e-default-rtdb.firebaseio.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "wallet-4de4e.firebasestorage.app",
+  "messagingSenderId": "968995451266",
+  "measurementId": "G-LM53FTF9LJ"
+}

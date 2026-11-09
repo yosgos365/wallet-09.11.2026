@@ -1,0 +1,9 @@
+{
+  "name": "ניהול מעשרות וצדקה",
+  "short_name": "ניהול מעשרות",
+  "description": "אפליקציה למעקב אחר הכנסות, הוצאות, והפרשת מעשר כספים.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9"
+}

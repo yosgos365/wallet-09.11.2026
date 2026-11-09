@@ -1,0 +1,6 @@
+{
+  "name": "ניהול מעשרות",
+  "description": "אפליקציה למעקב עסקאות והפרשת מעשר",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
